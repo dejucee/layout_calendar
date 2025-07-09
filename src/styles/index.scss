@@ -49,12 +49,16 @@ $week: (
             transition-duration: 0.5s;
         }
 
-        @each $day, $i in $week{
-            &--start-day-#{$day} &__day-1{
-                margin-left: calc((#{$i} * $calendar-day-width));
+        
+    }
+
+    @each $day, $i in $week{
+            &--start-day-#{$day} {
+                &__day-1{
+                    margin-left: calc((#{$i} * $calendar-day-width));
+                }
             }
         }
-    }
 
     @for $i from 28 through 31{
         &--month-length-#{$i} &__day-#{$i}:nth-child(n + #{$i + 1}) {
